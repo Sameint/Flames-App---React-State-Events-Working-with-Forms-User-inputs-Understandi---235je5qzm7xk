@@ -7,13 +7,13 @@ const App = () => {
   const [relationshipStatus, setRelationshipStatus] = useState("");
 
   const calculateRelationship = () => {
-    if (input1 === "" || input2 === "") {
+    if (input1.trim() === "" || input2.trim() === "") {
       setRelationshipStatus("Please enter valid input");
       return;
     }
 
-    const string1 = input1.toLowerCase();
-    const string2 = input2.toLowerCase();
+    const string1 = input1.toLowerCase().replace(/\s/g, "");
+    const string2 = input2.toLowerCase().replace(/\s/g, "");
 
     let remaining1 = "";
     let remaining2 = "";
